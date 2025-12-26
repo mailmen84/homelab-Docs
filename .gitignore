@@ -1,0 +1,14 @@
+# IDE
+.idea/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Secrets - do not commit
+*.key
+*.pem
+*.pfx
+*.env
+secrets/
+backups/
