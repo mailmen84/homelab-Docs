@@ -23,7 +23,7 @@ Switch port map (Buffalo BS-MP2012):
 - Port 6: Buffalo NAS (TS-XL)
 
 ## Network status (current)
-- Current subnet (temporary): **192.168.8.0/24**
+- Current active subnets (via VLANs): **192.168.10.0/24 (VLAN 10), 192.168.20.0/24 (VLAN 20), 192.168.30.0/24 (VLAN 30)**
 - VLAN plan (target): **10 / 20 / 30 / 40 / 50 / 60**
 - Trunk plan: **port 5** (DL380 uplink/trunk)
 - Access ports: as previously defined (to be documented explicitly in the Network chapter)
