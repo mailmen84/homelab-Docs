@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NodeCrafts — Documentation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0c10;
+      --surface: #10141c;
+      --border: #1e2535;
+      --accent: #00e5ff;
+      --accent2: #7b61ff;
+      --accent3: #00ff9d;
+      --text: #e8edf5;
+      --muted: #5a6585;
+      --font-head: 'Syne', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-mono);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Grid background */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,229,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,229,255,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Glow orbs */
+    .orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.12;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .orb-1 { width: 600px; height: 600px; background: var(--accent); top: -200px; right: -200px; animation: drift 12s ease-in-out infinite alternate; }
+    .orb-2 { width: 400px; height: 400px; background: var(--accent2); bottom: -100px; left: -100px; animation: drift 16s ease-in-out infinite alternate-reverse; }
+    .orb-3 { width: 300px; height: 300px; background: var(--accent3); top: 40%; left: 30%; animation: drift 10s ease-in-out infinite alternate; }
+
+    @keyframes drift {
+      from { transform: translate(0, 0) scale(1); }
+      to   { transform: translate(40px, 30px) scale(1.1); }
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 40px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(10,12,16,0.8);
+      backdrop-filter: blur(20px);
+    }
+
+    .nav-logo {
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: 1.2rem;
+      color: var(--accent);
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .nav-logo .icon {
+      width: 30px; height: 30px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    .nav-status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.75rem;
+      color: var(--accent3);
+    }
+    .status-dot {
+      width: 7px; height: 7px;
+      background: var(--accent3);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(0,255,157,0.4); }
+      50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(0,255,157,0); }
+    }
+
+    /* MAIN */
+    main {
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 140px 40px 80px;
+    }
+
+    /* HERO */
+    .hero {
+      margin-bottom: 80px;
+      animation: fadeUp 0.8s ease both;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      padding: 6px 14px;
+      border-radius: 100px;
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+    .hero-badge span { color: var(--accent); }
+
+    h1 {
+      font-family: var(--font-head);
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 800;
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      margin-bottom: 24px;
+    }
+    h1 .accent { color: var(--accent); }
+    h1 .dim { color: var(--muted); }
+
+    .hero-desc {
+      font-size: 0.95rem;
+      color: var(--muted);
+      max-width: 520px;
+      line-height: 1.8;
+      margin-bottom: 36px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #000;
+      font-weight: 500;
+    }
+    .btn-primary:hover { background: #33eaff; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,229,255,0.3); }
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-secondary:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+
+    /* TERMINAL BLOCK */
+    .terminal {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 80px;
+      animation: fadeUp 0.8s 0.2s ease both;
+    }
+    .terminal-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(255,255,255,0.02);
+    }
+    .dot { width: 10px; height: 10px; border-radius: 50%; }
+    .dot-r { background: #ff5f57; }
+    .dot-y { background: #febc2e; }
+    .dot-g { background: #28c840; }
+    .terminal-title { margin-left: auto; margin-right: auto; font-size: 0.72rem; color: var(--muted); }
+    .terminal-body { padding: 20px 24px; font-size: 0.82rem; line-height: 2; }
+    .t-prompt { color: var(--accent3); }
+    .t-cmd { color: var(--text); }
+    .t-comment { color: var(--muted); }
+    .t-ok { color: var(--accent); }
+    .t-url { color: var(--accent2); }
+    .cursor {
+      display: inline-block;
+      width: 8px; height: 14px;
+      background: var(--accent);
+      vertical-align: middle;
+      animation: blink 1s step-end infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+    /* SECTIONS GRID */
+    .sections-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      animation: fadeUp 0.8s 0.3s ease both;
+    }
+    .sections-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 16px;
+      animation: fadeUp 0.8s 0.4s ease both;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: all 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+    .card:hover {
+      border-color: rgba(0,229,255,0.3);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 30px rgba(0,229,255,0.05);
+    }
+    .card:hover::before { opacity: 1; }
+
+    .card-icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+    .card-title {
+      font-family: var(--font-head);
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .card-desc {
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .card-arrow {
+      margin-top: auto;
+      font-size: 0.75rem;
+      color: var(--accent);
+      opacity: 0;
+      transform: translateX(-8px);
+      transition: all 0.2s;
+    }
+    .card:hover .card-arrow { opacity: 1; transform: translateX(0); }
+
+    /* FOOTER */
+    footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--border);
+      padding: 32px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .footer-left { font-size: 0.75rem; color: var(--muted); }
+    .footer-left strong { color: var(--accent); font-weight: 500; }
+    .footer-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+    .cf-badge {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 4px 10px;
+      border-radius: 4px;
+      color: #f6821f;
+      font-size: 0.7rem;
+    }
+
+    @media (max-width: 600px) {
+      nav { padding: 16px 20px; }
+      .nav-links { display: none; }
+      main { padding: 110px 20px 60px; }
+      footer { flex-direction: column; gap: 12px; padding: 24px 20px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
+
+<nav>
+  <div class="nav-logo">
+    <div class="icon">⬡</div>
+    NodeCrafts
+  </div>
+  <ul class="nav-links">
+    <li><a href="#">Docs</a></li>
+    <li><a href="#">API</a></li>
+    <li><a href="#">GitHub</a></li>
+    <li><a href="#">Community</a></li>
+  </ul>
+  <div class="nav-status">
+    <div class="status-dot"></div>
+    All systems operational
+  </div>
+</nav>
+
+<main>
+
+  <section class="hero">
+    <div class="hero-badge">
+      <span>▲</span> Cloudflare Pages · GitHub · Custom Domain
+    </div>
+    <h1>
+      Node<span class="accent">Crafts</span><br>
+      <span class="dim">Docs</span>
+    </h1>
+    <p class="hero-desc">
+      Oficjalna dokumentacja projektu NodeCrafts. Znajdziesz tu przewodniki, referencje API
+      i wszystko co potrzebne do pracy z systemem.
+    </p>
+    <div class="hero-actions">
+      <a href="#sections" class="btn btn-primary">→ Przeglądaj dokumentację</a>
+      <a href="https://github.com" class="btn btn-secondary">⌥ GitHub</a>
+    </div>
+  </section>
+
+  <div class="terminal">
+    <div class="terminal-bar">
+      <div class="dot dot-r"></div>
+      <div class="dot dot-y"></div>
+      <div class="dot dot-g"></div>
+      <div class="terminal-title">deployment status</div>
+    </div>
+    <div class="terminal-body">
+      <div><span class="t-prompt">$ </span><span class="t-cmd">curl -I https://docs.nodecrafts.org</span></div>
+      <div><span class="t-ok">HTTP/2 200</span> <span class="t-comment">— OK</span></div>
+      <div><span class="t-comment">cf-ray: </span><span class="t-url">8f4a2b91d3e5c7a9-WAW</span></div>
+      <div><span class="t-comment">server: </span><span class="t-url">cloudflare</span></div>
+      <div><span class="t-comment">cache-control: </span><span class="t-ok">public, max-age=31536000</span></div>
+      <div>&nbsp;</div>
+      <div><span class="t-prompt">$ </span><span class="t-cmd">git status</span></div>
+      <div><span class="t-ok">✓ </span><span class="t-comment">Cloudflare Pages — deployed</span></div>
+      <div><span class="t-ok">✓ </span><span class="t-comment">GitHub Actions — passing</span></div>
+      <div><span class="t-ok">✓ </span><span class="t-comment">Custom domain — active</span></div>
+      <div>&nbsp;</div>
+      <div><span class="t-prompt">$ </span><span class="cursor"></span></div>
+    </div>
+  </div>
+
+  <div class="sections-label" id="sections">Documentation Sections</div>
+
+  <div class="grid">
+    <a href="#" class="card">
+      <div class="card-icon" style="background:rgba(0,229,255,0.1)">🚀</div>
+      <div class="card-title">Getting Started</div>
+      <div class="card-desc">Instalacja, konfiguracja i pierwsze kroki z NodeCrafts. Gotowy w kilka minut.</div>
+      <div class="card-arrow">→ Czytaj więcej</div>
+    </a>
+    <a href="#" class="card">
+      <div class="card-icon" style="background:rgba(123,97,255,0.1)">⚡</div>
+      <div class="card-title">API Reference</div>
+      <div class="card-desc">Pełna dokumentacja API z przykładami, typami i opisami wszystkich endpointów.</div>
+      <div class="card-arrow">→ Czytaj więcej</div>
+    </a>
+    <a href="#" class="card">
+      <div class="card-icon" style="background:rgba(0,255,157,0.1)">🔧</div>
+      <div class="card-title">Configuration</div>
+      <div class="card-desc">Wszystkie opcje konfiguracyjne, zmienne środowiskowe i ustawienia systemu.</div>
+      <div class="card-arrow">→ Czytaj więcej</div>
+    </a>
+    <a href="#" class="card">
+      <div class="card-icon" style="background:rgba(0,229,255,0.1)">📦</div>
+      <div class="card-title">Deployment</div>
+      <div class="card-desc">Wdrożenie na Cloudflare Pages, GitHub Actions i inne platformy CI/CD.</div>
+      <div class="card-arrow">→ Czytaj więcej</div>
+    </a>
+    <a href="#" class="card">
+      <div class="card-icon" style="background:rgba(123,97,255,0.1)">🛡️</div>
+      <div class="card-title">Security</div>
+      <div class="card-desc">Najlepsze praktyki bezpieczeństwa, autoryzacja i zarządzanie dostępem.</div>
+      <div class="card-arrow">→ Czytaj więcej</div>
+    </a>
+    <a href="#" class="card">
+      <div class="card-icon" style="background:rgba(0,255,157,0.1)">💬</div>
+      <div class="card-title">Community</div>
+      <div class="card-desc">Forum, Discord, zgłaszanie błędów i jak możesz wesprzeć projekt.</div>
+      <div class="card-arrow">→ Czytaj więcej</div>
+    </a>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-left">
+    © 2026 <strong>NodeCrafts</strong> — All rights reserved
+  </div>
+  <div class="footer-right">
+    Hosted on <span class="cf-badge">☁ Cloudflare Pages</span>
+  </div>
+</footer>
+
+</body>
+</html>
