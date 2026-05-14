@@ -1,18 +1,18 @@
 # Homelab Audit Form
 
 ## 1. Goal
-- What should the homelab do:
-- What works well right now:
-- What does not work / is annoying:
-- Priority areas (network / storage / AI / monitoring / other):
+- What should the homelab do: Main goal of my homelab is give me oportunity to learn how to manage servers and apps working on it. Im learning network administration using my switches. Other reason I have my homelab is run my services.
+- What works well right now: In overall I think all running pretty well, my most consern is security. Some services could be set up better but for first time I cant complain. 
+- What does not work / is annoying: At the moment most annoying is Openclaw service, witch is not running as I will expect. Other than tah I think I could do better work with my VLANs, and as I mention earlier security. 
+- Priority areas (network / storage / AI / monitoring / other): I think we will have to check all areas one by one and make sure all I running as should. 
 
 ## 2. Topology
 - Internet -> (what?) -> (what?) -> LAN:
-- Do you have pfSense? (yes/no):
-- Do you have an additional router? (yes/no):
-- Do you use an ISP modem/bridge? (yes/no):
-- Are VLANs used? (yes/no):
-- Is there a network diagram? (yes/no):
+- Do you have pfSense? (yes/no):yes
+- Do you have an additional router? (yes/no):no 
+- Do you use an ISP modem/bridge? (yes/no):yes
+- Are VLANs used? (yes/no):yes
+- Is there a network diagram? (yes/no):no
 
 ## 3. Network Devices
 
