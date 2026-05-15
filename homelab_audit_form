@@ -17,29 +17,36 @@
 ## 3. Network Devices
 
 ### Router / Firewall
-- Model:
-- System (pfSense / OPNsense / other):
-- IP:
-- Where it runs (bare metal / VM):
+- Model:Computer PC with 2 x NICs
+- System (pfSense / OPNsense / other):pfsense
+- IP:192.168.10.1
+- Where it runs (bare metal / VM):Bare metal
 - Interfaces:
-- Problems / notes:
+- Problems / notes: Add more VLANs and check overall setings 
 
 ### Switches
 Fill one section for each switch.
 
-- Model:
-- Managed? (yes/no):
+- Model:Buffalo BS-MP2012 
+- Managed? (yes/no):yes
 - IP:
-- VLAN support:
+- VLAN support:yes
+- Uplink to:
+- Problems / notes:
+
+- Model:CISCO 
+- Managed? (yes/no):yes
+- IP:
+- VLAN support:yes
 - Uplink to:
 - Problems / notes:
 
 ### Access Points
 Fill one section for each AP.
 
-- Model:
+- Model:unifi pro
 - SSIDs:
-- VLAN mapping:
+- VLAN mapping:no
 - Problems / notes:
 
 ## 4. VLANs and Addressing
@@ -71,7 +78,68 @@ Fill one section for each VM or container.
 - Working correctly? (yes/no):
 - Problems / notes:
 
-### NAS / TrueNAS
+- Name:
+- IP:
+- VLAN:
+- Role:
+- System:
+- Working correctly? (yes/no):
+- Problems / notes:
+
+- Name:
+- IP:
+- VLAN:
+- Role:
+- System:
+- Working correctly? (yes/no):
+- Problems / notes:
+
+- Name:
+- IP:
+- VLAN:
+- Role:
+- System:
+- Working correctly? (yes/no):
+- Problems / notes:
+
+- Name:
+- IP:
+- VLAN:
+- Role:
+- System:
+- Working correctly? (yes/no):
+- Problems / notes:
+
+- Name:
+- IP:
+- VLAN:
+- Role:
+- System:
+- Working correctly? (yes/no):
+- Problems / notes:
+
+- Name:
+- IP:
+- VLAN:
+- Role:
+- System:
+- Working correctly? (yes/no):
+- Problems / notes:
+
+
+1. NAS / TrueNAS
+- Model:
+- IP:
+- RAID / pool:
+- Problems / notes:
+
+ 2. NAS / TrueNAS
+- Model:
+- IP:
+- RAID / pool:
+- Problems / notes:
+
+ 3. NAS / TrueNAS
 - Model:
 - IP:
 - RAID / pool:
@@ -91,14 +159,15 @@ Fill one section for each VM or container.
 - Problems / notes:
 
 ## 7. OpenClaw AI
-- Where it runs (VM / container / host):
-- IP:
-- Role:
+- Where it runs (VM / container / host):VM  
+- IP:192.168.20.104
+- Role: First idea was just to help me with my homelab, keep updating my homelab reposytorium. Check my emails and calendar
 - Resources used (CPU / GPU / RAM):
 - File locations:
 - Directory structure summary:
-- Are soul files organized? (yes/no):
-- Problems / errors:
+- Are soul files organized? (yes/no):yes
+- Problems / errors: Quiet often hanging up, when I asked to do something, I got answer that is done, but then after few minutes asking me again about api token or password,
+same story is with google account, its running one day and after that i have to go again autoryzation proccess. 
 
 ## 8. Storage and Backup
 - Where data is stored:
@@ -108,10 +177,10 @@ Fill one section for each VM or container.
 - Have you tested restore? (yes/no):
 
 ## 9. Monitoring and Logs
-- Do you have monitoring? (yes/no):
-- Tools (e.g. Wazuh, Prometheus):
-- Where logs go:
-- Any alerts?
+- Do you have monitoring? (yes/no):yes
+- Tools (e.g. Wazuh, Prometheus):prometheus and Grafana, I want to install Wazuh for servers logs.
+- Where logs go: nowhere
+- Any alerts? No 
 
 ## 10. Global Problems
 - Biggest problem:
