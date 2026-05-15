@@ -70,37 +70,37 @@ Fill one section for each AP.
 ### VMs / Containers
 Fill one section for each VM or container.
 
-- Name:
+- Name:Openclaw
 - IP:
-- VLAN:
+- VLAN:20
 - Role:
-- System:
-- Working correctly? (yes/no):
-- Problems / notes:
+- System:Linux
+- Working correctly? (yes/no):Its working but not as I would like to be work
+- Problems / notes: as above
 
-- Name:
+- Name:Prometheus
 - IP:
-- VLAN:
+- VLAN:20
 - Role:
-- System:
-- Working correctly? (yes/no):
-- Problems / notes:
+- System: Linux
+- Working correctly? (yes/no):yes
+- Problems / notes: I dont see any issue
 
-- Name:
+- Name:Grafana
 - IP:
-- VLAN:
+- VLAN:20
 - Role:
-- System:
-- Working correctly? (yes/no):
-- Problems / notes:
+- System:Linux
+- Working correctly? (yes/no):yes
+- Problems / notes:no 
 
-- Name:
+- Name:Immich
 - IP:
-- VLAN:
+- VLAN:20
 - Role:
-- System:
-- Working correctly? (yes/no):
-- Problems / notes:
+- System:Linux
+- Working correctly? (yes/no):yes
+- Problems / notes:no
 
 - Name:
 - IP:
@@ -128,14 +128,14 @@ Fill one section for each VM or container.
 
 
 1. NAS / TrueNAS
-- Model:
-- IP:
+- Model:Dell R410
+- IP:192.168.20.112
 - RAID / pool:
 - Problems / notes:
 
  2. NAS / TrueNAS
-- Model:
-- IP:
+- Model:Dell R730
+- IP:192.168.20.
 - RAID / pool:
 - Problems / notes:
 
@@ -147,7 +147,7 @@ Fill one section for each VM or container.
 
 ## 6. DNS and DHCP
 
-### pfSense
+### pfSense 
 - DHCP enabled? (yes/no):
 - DHCP ranges:
 - DNS settings:
@@ -170,11 +170,11 @@ Fill one section for each VM or container.
 same story is with google account, its running one day and after that i have to go again autoryzation proccess. 
 
 ## 8. Storage and Backup
-- Where data is stored:
-- Backup exists? (yes/no):
+- Where data is stored: NAS
+- Backup exists? (yes/no):no
 - Backup location:
 - Backup frequency:
-- Have you tested restore? (yes/no):
+- Have you tested restore? (yes/no):no
 
 ## 9. Monitoring and Logs
 - Do you have monitoring? (yes/no):yes
@@ -183,13 +183,13 @@ same story is with google account, its running one day and after that i have to 
 - Any alerts? No 
 
 ## 10. Global Problems
-- Biggest problem:
-- Most chaotic element:
-- What are you afraid to change?
-- What breaks most often?
+- Biggest problem: 
+- Most chaotic element: Network 
+- What are you afraid to change? Im not afraid to change anything, any changes are giving me oportunity to learn more. 
+- What breaks most often? Mostly I have probmel with smb on windows, many times I have to map drivers again, sometimes I cant get access , problem with credantials
 
 ## 11. Starting Priority
-- What do you want to start with:
+- What do you want to start with: I thnik is worth to check network first 
 - Why:
 - What should be the first quick win:
 
