@@ -8,14 +8,16 @@
 - Verify server boot and iLO/iDRAC access (if applicable)
 
 ## Phase 2 — Network baseline
-- Confirm temporary LAN access (192.168.8.0/24)
-- Confirm switch management access
-- Confirm port map matches `docs/20-network/port-map.md`
+- Confirm pfSense reachable on each active VLAN gateway:
+  - VLAN 10 (`192.168.10.1`), VLAN 20 (`192.168.20.1`), VLAN 30 (`192.168.30.1`).
+- Confirm switch management access (Buffalo BS-MP2012 and any additional switch).
+- Confirm port map matches `docs/20-network/port-map.md`.
+- Historical note: previously a flat `192.168.8.0/24` was used before VLAN segmentation; not part of the rebuild target.
 
 ## Phase 3 — Virtualization (Proxmox)
 - DL380: install/verify Proxmox
-- R320: install/verify Proxmox
 - Record Proxmox versions, bridges, IPs
+- R320: install/verify its operating system (NOT Proxmox — final role TBD; see `docs/10-hardware/servers/dell-r320.md`)
 
 ## Phase 4 — Storage (TrueNAS)
 - R410: install/verify TrueNAS

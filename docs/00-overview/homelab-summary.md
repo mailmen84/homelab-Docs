@@ -2,21 +2,21 @@
 
 ## Purpose
 This documentation describes my homelab so it can be maintained and rebuilt reliably.
-Current focus: documenting the existing state (temporary subnet) and planned segmentation (VLANs).
+Current focus: keeping documentation in sync with the active VLAN-segmented network and filling in the remaining gaps.
 
 ## Current devices (high-level)
 - **DL380** — Proxmox (main compute; 10Gb uplink to switch on port 5)
-- **R320** — Proxmox
+- **R320** — role TBD (**not** Proxmox)
 - **R410** — TrueNAS (primary storage)
 - **Buffalo BS-MP2012** — switch (core connectivity)
-- **Raspberry Pi** — planned Prometheus/Grafana node
+- **Raspberry Pi** — Pi-hole / planned Prometheus/Grafana node
 - **Buffalo TS-XL NAS** — secondary NAS
 - **PCs** — user endpoints / management access
 
 ## Physical topology (current)
 Switch port map (Buffalo BS-MP2012):
 - Port 1: ISP / internet uplink
-- Port 2: R320 (Proxmox)
+- Port 2: R320 (not Proxmox)
 - Port 3: R410 (TrueNAS)
 - Port 4: PC
 - Port 5: DL380 (Proxmox, 10Gb, trunk planned)
