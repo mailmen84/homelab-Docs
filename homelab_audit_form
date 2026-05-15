@@ -86,9 +86,9 @@ Unknown device	192.168.30.108	Unknown	Needs checking	Ports 53 and 8081 detected
 ## 5. Servers and Hosts
 
 ### Proxmox
-- Node name:
-- IP:
-- Storage:
+- Node name:HP DL380 gen9
+- IP:192.168.20.100
+- Storage:NAS
 - Problems / notes:
 
 ### VMs / Containers
@@ -155,7 +155,7 @@ Fill one section for each VM or container.
 - Model:Dell R410
 - IP:192.168.20.112
 - RAID / pool:
-- Problems / notes:
+- Problems / notes: This truenas runs jellyfin and nextcloud. No issues 
 
  2. NAS / TrueNAS
 - Model:Dell R730
@@ -164,10 +164,10 @@ Fill one section for each VM or container.
 - Problems / notes:
 
  3. NAS / TrueNAS
-- Model:
+- Model: Old PC, CPU Intel I5, Ram drr3 32gb, NIC 10gb
 - IP:
 - RAID / pool:
-- Problems / notes:
+- Problems / notes: In futher plans
 
 ## 6. DNS and DHCP
 
