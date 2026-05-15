@@ -8,8 +8,9 @@ Main compute node running Proxmox. Planned trunk uplink to the switch for VLANs.
 - Link: **10Gb** (as currently planned/used)
 - Switch notes: Port 5 planned as **trunk** carrying VLANs 10/20/30/40/50/60
 
-## Current network (temporary)
-- Subnet (temporary): **192.168.8.0/24**
+## Network
+- Active VLANs in the homelab: **10 / 20 / 30** (`192.168.10.0/24`, `192.168.20.0/24`, `192.168.30.0/24`).
+- Proxmox node IP (per network-summary): `192.168.20.100` (VLAN 20). Confirm and update once verified.
 - Management IP: TODO
 - Hostname (FQDN): TODO
 

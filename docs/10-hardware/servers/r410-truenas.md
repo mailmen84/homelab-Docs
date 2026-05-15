@@ -8,9 +8,10 @@ Primary storage server (TrueNAS). Hosts datasets/shares used by the homelab.
 - Link speed: TODO (likely 1Gb unless upgraded)
 - Notes: storage services for Proxmox nodes and clients
 
-## Current network (temporary)
-- Subnet (temporary): **192.168.8.0/24**
-- TrueNAS management IP: TODO
+## Network
+- Active VLANs in the homelab: **10 / 20 / 30** (`192.168.10.0/24`, `192.168.20.0/24`, `192.168.30.0/24`).
+- TrueNAS IP (per network-summary): `192.168.20.112` (VLAN 20). Web UI requires `/ui/` path.
+- TrueNAS management IP: confirm and update once verified.
 - Hostname: TODO
 
 ## Storage layout (to fill)

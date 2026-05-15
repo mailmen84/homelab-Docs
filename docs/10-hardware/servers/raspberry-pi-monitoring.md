@@ -11,8 +11,9 @@ Planned monitoring node for the homelab:
 - Link speed: 1Gb (typical) / Wi-Fi (if used) — TODO
 - Power: USB power supply — TODO
 
-## Current network (temporary)
-- Subnet (temporary): **192.168.8.0/24**
+## Network
+- Active VLANs in the homelab: **10 / 20 / 30** (`192.168.10.0/24`, `192.168.20.0/24`, `192.168.30.0/24`).
+- Note: per `docs/20-network/network-summary.md`, Pi-hole appears at `192.168.10.2` (VLAN 10) and Grafana at `192.168.20.108` (VLAN 20). Confirm whether they run on this Pi.
 - IP: TODO
 - Hostname: TODO
 

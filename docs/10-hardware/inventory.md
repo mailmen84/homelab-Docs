@@ -5,7 +5,7 @@
 
 ## Core compute
 - **HPE ProLiant DL380 Gen9** — Proxmox (main compute, 10Gb uplink planned trunk on switch port 5)
-- **Dell R320** — Proxmox
+- **Dell R320** — role TBD (not Proxmox)
 - **Dell R410** — TrueNAS (primary storage)
 
 ## Network
