@@ -58,6 +58,30 @@ Fill one section for each AP.
 - Inter-VLAN routing:
   - full / limited / none
 - Problems / confusion:
+VLAN 10 - Management / LAN
+Service	IP Address	URL / Access	Status	Notes
+Gateway / pfSense	192.168.10.1	https://192.168.10.1:8443	Needs confirmation	Gateway detected with DNS and nginx on port 8443
+Pi-hole	192.168.10.2	http://192.168.10.2/admin	Needs confirmation	Raspberry Pi / Pi-hole detected
+Buffalo Web UI	192.168.10.101	http://192.168.10.101	Needs confirmation	Buffalo web interface detected
+Cisco Switch	192.168.10.200	ssh 192.168.10.200 / http://192.168.10.200	Needs confirmation	Cisco switch management detected
+Tailscale Router	192.168.10.130	ssh 192.168.10.130	Working	Ubuntu / Intel NUC subnet router
+VLAN 20 - Servers
+Service	IP Address	URL / Access	Status	Notes
+Gateway / pfSense VLAN 20	192.168.20.1	https://192.168.20.1:8443	Needs confirmation	Gateway detected with DNS and nginx on port 8443
+Proxmox	192.168.20.100	https://192.168.20.100:8006	Working	Proxmox GUI uses HTTPS and port 8006
+Server / NAS candidate	192.168.20.102	http://192.168.20.102	Needs confirmation	SMB/NFS ports detected: 139, 445, 2049
+Tomcat service host	192.168.20.103	http://192.168.20.103:8080 / https://192.168.20.103:8443	Needs confirmation	Apache Tomcat detected
+Linux host	192.168.20.104	ssh 192.168.20.104	Needs confirmation	SSH/RPC detected
+Monitoring candidate	192.168.20.105	http://192.168.20.105:9090	Needs confirmation	Go net/http server detected; possible monitoring service
+Grafana	192.168.20.108	http://192.168.20.108:3000	Needs confirmation	Grafana detected by nmap
+TrueNAS	192.168.20.112	http://192.168.20.112/ui/	Working	TrueNAS GUI requires /ui/ path
+Linux / Web host	192.168.20.113	http://192.168.20.113:3000	Needs confirmation	nginx and port 3389 detected
+VLAN 30 - Management / iLO / Other
+Service	IP Address	URL / Access	Status	Notes
+Gateway / pfSense VLAN 30	192.168.30.1	https://192.168.30.1:8443	Needs confirmation	Gateway detected with DNS and nginx on port 8443
+Linux host	192.168.30.103	ssh 192.168.30.103	Needs confirmation	Dropbear SSH detected
+HP iLO	192.168.30.105	https://192.168.30.105	Needs confirmation	HP Integrated Lights-Out web interface detected
+Unknown device	192.168.30.108	Unknown	Needs checking	Ports 53 and 8081 detected
 
 ## 5. Servers and Hosts
 
