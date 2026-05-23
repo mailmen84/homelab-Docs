@@ -8,6 +8,7 @@ Current focus: keeping documentation in sync with the active VLAN-segmented netw
 - **DL380** — Proxmox (main compute; 10Gb uplink to switch on port 5)
 - **R320** — role TBD (**not** Proxmox)
 - **R410** — TrueNAS (primary storage)
+- **R730** - TrueNAS (PBS tbc
 - **Buffalo BS-MP2012** — switch (core connectivity)
 - **Raspberry Pi** — Pi-hole / planned Prometheus/Grafana node
 - **Buffalo TS-XL NAS** — secondary NAS
