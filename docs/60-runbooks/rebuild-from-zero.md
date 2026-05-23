@@ -20,13 +20,19 @@
 - R320: install/verify its operating system (NOT Proxmox — final role TBD; see `docs/10-hardware/servers/dell-r320.md`)
 
 ## Phase 4 — Storage (TrueNAS)
-- R410: install/verify TrueNAS
+- R410: TrueNAS SCALE 
+- Verify pools, datasets, shares
+- Verify permissions model
+- R730: TrueNAS SCALE 
+- Verify pools, datasets, shares
+- Verify permissions model
+- PC Workstation: TrueNAS SCALE 
 - Verify pools, datasets, shares
 - Verify permissions model
 
 ## Phase 5 — Core services
-- Monitoring node (Raspberry Pi): Prometheus + Grafana (planned)
-- Other services (planned): TODO
+- Monitoring VM's : Prometheus + Grafana + Wazuh
+- Raspberry pi 3+ : Pihole 
 
 ## Phase 6 — VLAN rollout (planned)
 - Implement pfSense (separate project/chat)
