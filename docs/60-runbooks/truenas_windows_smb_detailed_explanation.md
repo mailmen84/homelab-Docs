@@ -1,6 +1,10 @@
 # TrueNAS SMB on Windows - Detailed Explanation
 
-**Correct TrueNAS IP:** `192.168.20.112`  
+> **Note (IP drift):** This explainer references TrueNAS at `192.168.20.112`, which was the address at the time of writing.
+> The current authoritative IP for the R410 TrueNAS host is **`192.168.20.11`** — see [`docs/00-overview/homelab-summary.md`](../00-overview/homelab-summary.md).
+> The protocol/permission reasoning below is unchanged.
+
+**Historical TrueNAS IP at time of writing:** `192.168.20.112`  
 **Client:** Windows PC  
 **Server:** TrueNAS Community Edition  
 **Protocol:** SMB/CIFS  

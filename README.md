@@ -11,19 +11,32 @@ The goal is to keep a clear "single source of truth" so the whole lab can be reb
 - See [CONVENTIONS.md](CONVENTIONS.md) for file naming, structure, and page format.
 
 ## Current environment (quick snapshot)
-- Devices: DL380 (Proxmox), R320 (role TBD, **not** Proxmox), R410 (TrueNAS), Buffalo BS-MP2012 switch, Raspberry Pi, Buffalo TS-XL NAS, PCs.
+> Authoritative source: [`docs/00-overview/homelab-summary.md`](docs/00-overview/homelab-summary.md).
+
+- Devices:
+  - **HPE DL380 Gen9** — Proxmox VE 9.2.2 (main compute, 10Gb uplink to switch port 5)
+  - **Dell R320** — role TBD (**not** Proxmox)
+  - **Dell R410** — TrueNAS SCALE (primary storage)
+  - **Dell R730** — TrueNAS SCALE (planned PBS — to be confirmed)
+  - **PC Workstation** — TrueNAS SCALE (additional storage host)
+  - **Buffalo BS-MP2012** — managed switch (core connectivity)
+  - **Cisco switch** — secondary managed switch (VLAN-capable; details TBD)
+  - **Raspberry Pi 3+** — Pi-hole DNS (planned Prometheus/Grafana node)
+  - **Buffalo TS-XL NAS** — secondary NAS
+  - **Dell Optiplex (Ubuntu/NUC-style)** — Tailscale subnet router
+  - **PC(s)** — user endpoints / management access
 - **Active subnets (VLANs already in service):**
-  - `192.168.10.0/24` — VLAN 10 (Management / LAN)
-  - `192.168.20.0/24` — VLAN 20 (Servers)
-  - `192.168.30.0/24` — VLAN 30 (Management / iLO / Other)
+  - `192.168.10.0/24` — VLAN 10 (Infrastructure: Pi-hole, Tailscale)
+  - `192.168.20.0/24` — VLAN 20 (Servers, VMs, services)
+  - `192.168.30.0/24` — VLAN 30 (Hardware management: iDRAC/iLO, IoT)
 - VLAN plan (target): `10/20/30/40/50/60` — VLANs 40/50/60 are planned, not yet enforced.
-- Switch port map (current cabling):
+- Switch port map (current cabling, Buffalo BS-MP2012):
   - Port 1: ISP
-  - Port 2: R320
-  - Port 3: R410
+  - Port 2: Dell R320 (**not** Proxmox)
+  - Port 3: Dell R410 (TrueNAS)
   - Port 4: PC
-  - Port 5: DL380 (10Gb, planned trunk)
-  - Port 6: Buffalo NAS
+  - Port 5: HPE DL380 (Proxmox, 10Gb, planned trunk)
+  - Port 6: Buffalo TS-XL NAS
 - Historical note: the lab previously used a flat `192.168.8.0/24` network before VLAN segmentation; pages that still mention it are being migrated.
 
 ## Repository structure
@@ -41,6 +54,7 @@ The goal is to keep a clear "single source of truth" so the whole lab can be reb
 - `scripts/` — helper notes/scripts (export commands, checklists)
 
 ## Start here
-1. Network summary (most up-to-date): `docs/20-network/network-summary.md`
-2. Architecture summary: `docs/00-overview/homelab-summary.md`
+1. Homelab summary (source of truth): `docs/00-overview/homelab-summary.md`
+2. Network summary: `docs/20-network/network-summary.md`
 3. Hardware inventory: `docs/10-hardware/inventory.md`
+4. VM inventory: `docs/40-virtualization/vm-inventory.md`

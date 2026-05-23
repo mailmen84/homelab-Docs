@@ -4,8 +4,10 @@
 Network-wide DNS sinkhole and (optionally) local DNS resolver.
 
 ## Where it runs
-- Host: Raspberry Pi (also planned to host Prometheus/Grafana — see [`raspberry-pi-monitoring.md`](../10-hardware/servers/raspberry-pi-monitoring.md)).
-- IP (per `network-summary.md`): `192.168.10.2` (VLAN 10 — Management / LAN).
+- Host: Raspberry Pi 3+ (also planned to host Prometheus/Grafana — see [`raspberry-pi-monitoring.md`](../10-hardware/servers/raspberry-pi-monitoring.md)).
+- Hostname: `pihole`.
+- MAC: `b8:27:eb:24:82:e7`.
+- IP (per `homelab-summary.md`): `192.168.10.2` (VLAN 10 — Infrastructure).
 - Admin UI: `http://192.168.10.2/admin`.
 
 ## DNS clients

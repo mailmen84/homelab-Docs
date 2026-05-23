@@ -1,6 +1,10 @@
 # TrueNAS SMB on Windows - Troubleshooting Guide
 
-**Correct TrueNAS IP:** `192.168.20.112`  
+> **Note (IP drift):** This guide references TrueNAS at `192.168.20.112`, which was the address at the time the incident was solved.
+> The current authoritative IP for the R410 TrueNAS host is **`192.168.20.11`** — see [`docs/00-overview/homelab-summary.md`](../00-overview/homelab-summary.md).
+> When following the steps, substitute the current IP. The procedure itself is unchanged.
+
+**Historical TrueNAS IP at time of fix:** `192.168.20.112`  
 **Problem solved:** Windows could see SMB shares but could not access media shares due to wrong parent dataset permissions.
 
 ---

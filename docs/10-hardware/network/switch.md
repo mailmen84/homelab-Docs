@@ -6,11 +6,14 @@ Planned: VLAN segmentation with a trunk uplink to DL380 (Proxmox).
 
 ## Current port map (physical cabling)
 - Port 1: ISP / internet uplink
-- Port 2: Dell R320 (Proxmox)
-- Port 3: Dell R410 (TrueNAS)
+- Port 2: Dell R320 (**not** Proxmox — role TBD)
+- Port 3: Dell R410 (TrueNAS SCALE)
 - Port 4: PC (management/client)
-- Port 5: HPE DL380 Gen9 (Proxmox) — 10Gb uplink, planned trunk
+- Port 5: HPE DL380 Gen9 (Proxmox VE 9.2.2) — 10Gb uplink, planned trunk
 - Port 6: Buffalo TS-XL NAS
+
+> Dell R730 (TrueNAS) and PC Workstation (TrueNAS) are also connected to the lab but their switch ports
+> on the Buffalo BS-MP2012 are not yet documented — TODO.
 
 ## VLAN plan (target)
 Planned VLAN IDs: 10 / 20 / 30 / 40 / 50 / 60
