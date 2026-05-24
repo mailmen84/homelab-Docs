@@ -1,8 +1,12 @@
 # Immich Troubleshooting Solution
 
+> **Note (IP drift):** This runbook references TrueNAS at `192.168.20.112`, which was the address at the time the incident was solved.
+> The current authoritative IP for the R410 TrueNAS host is **`192.168.20.11`** — see [`docs/00-overview/homelab-summary.md`](../00-overview/homelab-summary.md).
+> When following the steps, substitute the current IP. The procedure itself is unchanged.
+
 **System:** Immich in Docker Compose on Ubuntu VM  
 **Storage:** TrueNAS NFS dataset  
-**Correct TrueNAS IP:** `192.168.20.112`  
+**Historical TrueNAS IP at time of fix:** `192.168.20.112`  
 **Immich VM user:** `przemek`  
 **Immich Docker Compose folder:** `/home/przemek/immich`  
 **Immich upload location from `.env`:** `/mnt/immich/library`  

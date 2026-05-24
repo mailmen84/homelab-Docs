@@ -1,7 +1,8 @@
 # Dell R410 — TrueNAS
 
 ## Purpose
-Primary storage server (TrueNAS). Hosts datasets/shares used by the homelab.
+Primary storage server running **TrueNAS SCALE**. Hosts datasets/shares used by the homelab
+(notably Jellyfin and Nextcloud per the audit form).
 
 ## Physical / connectivity
 - Connected switch port: **Port 3**
@@ -10,9 +11,10 @@ Primary storage server (TrueNAS). Hosts datasets/shares used by the homelab.
 
 ## Network
 - Active VLANs in the homelab: **10 / 20 / 30** (`192.168.10.0/24`, `192.168.20.0/24`, `192.168.30.0/24`).
-- TrueNAS IP (per network-summary): `192.168.20.112` (VLAN 20). Web UI requires `/ui/` path.
-- TrueNAS management IP: confirm and update once verified.
-- Hostname: TODO
+- TrueNAS IP: `192.168.20.11` (VLAN 20). Web UI requires `/ui/` path.
+- MAC: `5c:ed:8c:1b:6e:6c`.
+- Hostname: `truenas-r410`.
+- iDRAC management IP: TODO (expected on VLAN 30).
 
 ## Storage layout (to fill)
 - Pool name(s): TODO

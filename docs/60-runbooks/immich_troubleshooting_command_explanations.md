@@ -2,7 +2,11 @@
 
 **Purpose of this file:** explain what each command was used for, why it was used, and possible alternatives.
 
-**Correct TrueNAS IP:** `192.168.20.112`
+> **Note (IP drift):** This file references TrueNAS at `192.168.20.112`, which was the address at the time of writing.
+> The current authoritative IP for the R410 TrueNAS host is **`192.168.20.11`** — see [`docs/00-overview/homelab-summary.md`](../00-overview/homelab-summary.md).
+> When running these commands, substitute the current IP. The procedure itself is unchanged.
+
+**Historical TrueNAS IP at time of writing:** `192.168.20.112`
 
 ---
 

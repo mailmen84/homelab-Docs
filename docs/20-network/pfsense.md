@@ -6,8 +6,8 @@ Gateway on every active VLAN; runs DHCP and DNS for the lab.
 
 ## Where it runs
 - Hardware: PC with 2× NICs (bare metal).
-- IP (per `network-summary.md`): `192.168.10.1` (VLAN 10 gateway). Also `192.168.20.1` (VLAN 20 gw), `192.168.30.1` (VLAN 30 gw).
-- Web UI: `https://192.168.10.1:8443` (per current nmap scan; confirm exact port).
+- IP (per `homelab-summary.md`): `192.168.10.1` (VLAN 10 gateway), `192.168.20.1` (VLAN 20 gw), `192.168.30.1` (VLAN 30 gw).
+- Web UI: `https://192.168.10.1` (confirm exact port — TODO).
 
 ## Interfaces (to fill)
 | Interface | Type | Role | VLAN(s) | Notes |
@@ -21,9 +21,10 @@ Gateway on every active VLAN; runs DHCP and DNS for the lab.
 - **VLAN 30** — Mgmt / iLO / Other: `192.168.30.0/24`, gw `192.168.30.1`.
 - Planned: VLAN 40 / 50 / 60.
 
-## DHCP (to fill)
-- DHCP scope per VLAN: TODO.
-- Static reservations: TODO (see [`ip-register.md`](ip-register.md)).
+## DHCP (per `homelab-summary.md`)
+- VLAN 20 (Servers) pool: `192.168.20.100` → `192.168.20.200`.
+- Static leases by MAC for every documented physical host and VM — see [`network-summary.md`](network-summary.md).
+- VLAN 10 / VLAN 30 DHCP scopes: TODO.
 
 ## DNS
 - Upstream DNS: TODO (often Pi-hole at `192.168.10.2` as a forwarder).
