@@ -60,6 +60,8 @@ pfSense DHCP pool: `192.168.20.100`–`192.168.20.200`. Static leases are assign
 | Gateway / pfSense | `192.168.10.1` | pfsense | `https://192.168.10.1` | bare-metal pfSense, gateway on all VLANs |
 | Pi-hole | `192.168.10.2` | pihole | `http://192.168.10.2/admin` | Raspberry Pi 3+ (MAC `b8:27:eb:24:82:e7`) |
 | Tailscale subnet router | `192.168.10.130` | tailscale | `ssh 192.168.10.130` | Dell Optiplex (MAC `64:00:6a:97:3d:b3`); static lease set |
+| Buffalo switch management UI | `192.168.10.101` | TODO | `http://192.168.10.101` | Detected in audit; verify hostname and static lease |
+| Cisco switch management | `192.168.10.200` | TODO | `ssh 192.168.10.200` / `http://192.168.10.200` | Detected in audit; verify actual management protocol |
 
 ### VLAN 20 — Servers (physical hosts)
 | IP | Hostname | Hardware | Role | MAC | Status |
@@ -87,7 +89,13 @@ All VMs run on **HPE DL380 Gen9** (Proxmox `192.168.20.10`), OS: Ubuntu Server.
 | `192.168.20.59` | unifi | 104 | UniFi controller | `bc:24:11:2d:82:1a` | ⏳ to configure |
 
 ### VLAN 30 — Hardware management (iDRAC/iLO, IoT)
-TODO — populate once iDRAC/iLO addresses are confirmed on this VLAN.
+| Service / Device | IP | Access | Status | Notes |
+|---|---:|---|---|---|
+| Gateway / pfSense VLAN 30 | `192.168.30.1` | `https://192.168.30.1` | needs confirmation | VLAN 30 gateway |
+| HP iLO (DL380) | `192.168.30.105` | `https://192.168.30.105` | needs confirmation | iLO web interface detected in audit scan |
+| Linux host (Dropbear SSH) | `192.168.30.103` | `ssh 192.168.30.103` | needs confirmation | Confirm device identity |
+| Unknown device | `192.168.30.108` | unknown | needs checking | Ports 53 and 8081 detected in audit |
+
 Per `homelab-summary.md`, VLAN 30 is dedicated to hardware management interfaces (iDRAC/iLO) and IoT.
 
 ## pfSense — DHCP

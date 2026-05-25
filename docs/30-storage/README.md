@@ -10,7 +10,11 @@ snapshots, and backup/replication strategy.
 - `snapshots-replication.md` — snapshot policy, replication targets, restore tests.
 
 ## Related
-- Host page: [`docs/10-hardware/servers/r410-truenas.md`](../10-hardware/servers/r410-truenas.md)
+- Storage host matrix: [`storage-host-matrix.md`](storage-host-matrix.md)
+- Host pages:
+  - [`docs/10-hardware/servers/r410-truenas.md`](../10-hardware/servers/r410-truenas.md)
+  - [`docs/10-hardware/servers/r730-truenas.md`](../10-hardware/servers/r730-truenas.md)
+  - [`docs/10-hardware/servers/pc-truenas.md`](../10-hardware/servers/pc-truenas.md)
 - Runbooks: [`docs/60-runbooks/`](../60-runbooks/) (Immich storage fix, TrueNAS SMB on Windows).
 
 > Status: scaffolding only. Pages will be added as content is filled in.

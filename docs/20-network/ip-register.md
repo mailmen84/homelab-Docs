@@ -41,6 +41,16 @@ Planned (not yet enforced): VLAN 40 / 50 / 60.
 | UniFi AP Pro | Wi-Fi AP | TODO | TODO | TBD | TODO | TBD | VLAN mapping TBD |
 | PC (main) | Client | TODO | DHCP | 20 (DHCP pool) | TODO | 4 | |
 
+## Additional management IPs (to verify)
+
+| Device / interface | IP | VLAN | Access | Verification status |
+|---|---:|---|---|---|
+| Buffalo switch web UI | `192.168.10.101` | 10 | `http://192.168.10.101` | needs confirmation |
+| Cisco switch management | `192.168.10.200` | 10 | `ssh 192.168.10.200` / `http://192.168.10.200` | needs confirmation |
+| HP iLO (DL380) | `192.168.30.105` | 30 | `https://192.168.30.105` | needs confirmation |
+| Linux host (Dropbear SSH) | `192.168.30.103` | 30 | `ssh 192.168.30.103` | needs confirmation |
+| Unknown device | `192.168.30.108` | 30 | unknown | needs checking |
+
 ## Proxmox VMs (DL380 / `192.168.20.10`)
 See [`docs/40-virtualization/vm-inventory.md`](../40-virtualization/vm-inventory.md) for the authoritative VM list.
 
