@@ -426,7 +426,7 @@ grafana.example.com  -> http://192.168.1.12:3000
 
 ---
 
-## 9. Dwa style konfiguracji Tunnel
+## 9. Two tunnel configuration styles
 
 ### 9.1 Metoda 1 - konfiguracja przez Cloudflare Dashboard
 
@@ -1465,7 +1465,7 @@ firmowych systemow
 ```
 
 Jesli jeden serwer padnie, Cloudflare moze kierowac ruch na drugi.
-Dla malej strony lub homelabu nie jest to pierwsza rzecz do konfiguracji, ale w firmach jest wazna.
+For a small website or homelab this is usually not the first thing to configure, but in companies it matters a lot.
 
 ---
 

@@ -14,7 +14,7 @@ Primary storage server running **TrueNAS SCALE**. Hosts datasets/shares used by 
 - TrueNAS management IP: `192.168.20.11/24` (VLAN 20), interface `enp3s0f1`. Web UI path: `/ui/`.
 - Default route (IPv4): `192.168.20.1`.
 - DNS primary: `192.168.20.1`.
-- Hostname configured in TrueNAS UI: `truenas` (konwencja dokumentacji hosta: `Dell R410-truenas`).
+- Hostname configured in TrueNAS UI: `truenas` (documentation host label: `Dell R410-truenas`).
 - Domain: `local`.
 - Interface MACs:
   - `eno1`: `84:2b:2b:60:ee:27`
@@ -22,7 +22,7 @@ Primary storage server running **TrueNAS SCALE**. Hosts datasets/shares used by 
   - `enp3s0f0`: `5c:ed:8c:1b:6e:68`
   - `enp3s0f1`: `5c:ed:8c:1b:6e:6c`
 - Service announcement: `NETBIOS-NS, mDNS, WS-DISCOVERY`.
-- iDRAC/IPMI: widoczny `Channel 1`, adres IP do uzupełnienia osobno.
+- iDRAC/IPMI: `Channel 1` visible; IP address still needs to be added.
 
 ## System facts (from screenshots)
 - Platform: `Generic`
@@ -100,7 +100,7 @@ Pool `tank` includes at least:
 - Auto TRIM: `Off`
 
 ## TODO (remaining data to collect)
-- Uzupełnić model kontrolera/HBA (na nowych screenach brak dedykowanego widoku kontrolera).
-- Uzupełnić pełne modele dysków (vendor/model; obecnie mamy urządzenia, pojemności i seriale).
-- Dopisać adres iDRAC/IPMI (na screenie widać tylko `Channel 1`).
-- Potwierdzić, czy brak zadań snapshot/backup jest stanem docelowym.
+- Add controller/HBA model (a dedicated controller screen was not included in the current screenshots).
+- Add full disk vendor/model names (currently we have device names, capacities, and serials).
+- Add iDRAC/IPMI address (only `Channel 1` is visible on the screenshot).
+- Confirm whether having no snapshot/backup tasks is the intended final state.

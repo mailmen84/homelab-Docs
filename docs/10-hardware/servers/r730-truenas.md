@@ -68,5 +68,5 @@ Planned role: **Proxmox Backup Server (PBS)** target — to be confirmed.
 ## Role TODO
 - Confirm whether this host stays as TrueNAS SCALE long-term or is repurposed for PBS.
 - If PBS: document the Proxmox node it backs up, retention policy, and verification job schedule.
-- Uzupełnić model kontrolera/HBA i modele/seriale dysków z widoku `Disks` (nie były widoczne na dostarczonych screenach).
-- Uzupełnić IP iDRAC/IPMI.
+- Add controller/HBA model and full disk model/serial details from the `Disks` view (not visible in the current screenshots).
+- Add iDRAC/IPMI address.
